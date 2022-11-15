@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown</title>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="countdown.css">
+</head>
+<body>
+    <!-- We start with the HTML code. The HTML code consists of a div with a class name countdown. Inside countdown, we have 4 div called box. Each of this box further consists of 2 span elements. The first span element will display the number count while the second one will display the label for each of the box. -->
+    <div class="event-container">
+        <label for="event">Date of event:</label>
+        <input type="date" id="event" name="countdown-from" value="2023-01-01" min="2022-11-15">
+        <p>Current countdown set to January 1st 2023<br>Enter a date to change the countdown clock.</p>
+    </div>
+    <div class="countdown">
+        <div class="box">
+            <span class="num" id="day-box">00</span>
+            <span class="text">Days</span>
+        </div>
+        <div class="box">
+            <span class="num" id="hr-box">00</span>
+            <span class="text">Hours</span>
+        </div>
+        <div class="box">
+            <span class="num" id="min-box">00</span>
+            <span class="text">Minutes</span>
+        </div>
+        <div class="box">
+            <span class="num" id="sec-box">00</span>
+            <span class="text">Seconds</span>
+        </div>
+    </div>
+    <!-- Script -->
+    <script src="coundown.js"></script>
+</body>
+</html>

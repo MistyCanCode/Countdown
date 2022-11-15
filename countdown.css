@@ -1,0 +1,113 @@
+/* Now we move on to code the CSS. We will be using relative units and media queries to make the design responsive. Let us start with the CSS reset followed by applying ‘#111111’ as the background colour for the body.
+
+We set the width for the countdown to 80vw. The contents of countdown are positioned using the flex layout. we use the transform method to center the countdown */
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #ffffff;
+}
+body{
+    background-color: #111111;
+}
+.event-container{
+    font-size: 3em;
+    text-align: center;
+    padding: 15px;
+    margin: 15px;
+    border: 2px solid  rgba(255,255,255,0.12);
+    border-radius: 10px;
+    top: 25px;
+    position:absolute;
+    transform: translate(-50%, -50%);
+    top: 20%;
+    left: 50%;
+}
+.event-container p{
+    font-size: .3em;
+    color: rgba(255, 255, 255, 0.15);
+}
+.countdown{
+    width: 80vw;
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+.box{
+    width: 28vmin;
+    height: 28vmin;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+    box-shadow: 15px 15px 30px rgba(0,0,0,0.5);
+    font-size: 16px;
+}
+.box::after{
+    content: "";
+    position: absolute;
+    background-color: rgba(255,255,255,0.12);
+    height: 100%;
+    width: 50%;
+    left: 0;
+}
+span.num{
+    background-color: #202020;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    font-weight: 600;
+    font-size: 5em;
+}
+span.text{
+    font-size: 1.2em;
+    background-color: #2887e3;
+    display: block;
+    width: 100%;
+    text-align:center;
+    padding: 0.5em 0;
+    font-weight: 400;
+}
+@media  screen and(max-width: 1024px) {
+    .countdown{
+        width: 85vw;
+    }
+    .box{
+        height: 26vmin;
+        width: 26vmin;
+        font-size: 12px;
+    }
+}
+@media screen and (max-width: 768px){
+    .countdown{
+        width: 90vw;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+    .box{
+        width: calc(50% - 40px);
+        height: 30vmin;
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 480px){
+    .countdown{
+        gap: 15px;
+    }
+    .box{
+        width: 100%;
+        height: 25vmin;
+        font-size: 8px;
+    }
+    .span.text{
+        font-size: 1.5em;
+    }
+}
